@@ -5,6 +5,7 @@
   <description>Teleop app for KUKA youBot</description>
 
   <maintainer email="ratneshmadaan@gmail.com">Ratnesh Madaan</maintainer>
+  <license></license>
 
   
   <url type="website">https://wiki.ros.org/leap_motion</url>
