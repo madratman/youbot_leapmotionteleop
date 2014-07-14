@@ -2,8 +2,8 @@
 __author__ = 'flier'
 import rospy
 import leap_interface
-from leap_motion.msg import leap
-from leap_motion.msg import leapros
+# from leap_motion.msg import leap
+# from leap_motion.msg import leapros
 from geometry_msgs.msg import Twist
 
 # Obviously, this method publishes the data defined in leapros.msg to /leapmotion/data
@@ -32,19 +32,7 @@ def sender():
         hand_pitch_       = li.get_hand_pitch()
         hand_roll_        = li.get_hand_roll()
         hand_yaw_         = li.get_hand_yaw()
-        msg = leapros() 
-        msg.direction.x = hand_direction_[0]    
-        msg.direction.y = hand_direction_[1]
-        msg.direction.z = hand_direction_[2]
-        # msg.normal.x = hand_normal_[0]
-        # msg.normal.y = hand_normal_[1]
-        # msg.normal.z = hand_normal_[2]
-        msg.palmpos.x = hand_palm_pos_[0]
-        msg.palmpos.y = hand_palm_pos_[1]
-        msg.palmpos.z = hand_palm_pos_[2]
-        msg.ypr.x = hand_yaw_
-        msg.ypr.y = hand_pitch_
-        msg.ypr.z = hand_roll_
+   
 
         # handsecond_normal_ = li.get_handsecond_normal()
 
@@ -72,7 +60,7 @@ def sender():
         twist.linear.z = 0
         twist.angular.x = 0     
         twist.angular.y = 0
-        twist.angular.z = (-1 * handsecond_normal_[0] / 5 )#+ (hand_direction_[2] / 5)
+        # twist.angular.z = (-1 * handsecond_normal_[0] / 5 )#+ (hand_direction_[2] / 5)
         print "xvel", twist.linear.x, "yvel", twist.linear.y, "angvel", twist.angular.z
         pub_youbotleap.publish(twist)
         rate.sleep()

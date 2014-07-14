@@ -4,8 +4,8 @@ import rospy
 import roslib
 import leap_interface
 import brics_actuator.msg
-from leap_motion.msg import leap
-from leap_motion.msg import leapros
+# from leap_motion.msg import leap
+# from leap_motion.msg import leapros
 from geometry_msgs.msg import Twist
 from brics_actuator.msg import JointPositions, JointValue, Poison
 import sys, select, termios, tty, signal
