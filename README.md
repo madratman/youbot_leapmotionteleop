@@ -21,16 +21,16 @@ Video:
 
 Short Description:
 
-The Leap Motion application is used to remotely control the KUKA youBot via the Leap Motion sensor. You can control the youBot base as well as the youBot arm and gripper.  This application uses Leap Motion API's ROS wrapper (2) to obtain the hand’s normal, direction, roll-pitch-yaw vectors and position. The vectors are published to the cmd_vel topic to which the youBot driver subscribes.
+The Leap Motion application is used to remotely control the KUKA youBot via the Leap Motion sensor. You can control the youBot base as well as the youBot arm and gripper. This application builds on the Leap Motion API's ROS wrapper to obtain the hand’s normal, direction, roll-pitch-yaw vectors and position. The vectors are published to the cmd_vel topic to which the youBot driver subscribes.
 
 Installation 
 
-If you don't already have a catkin workspace, please follow these instructions before starting with 2.: http://ros.org/wiki/catkin/Tutorials/create_a_workspace
-cd ~/catkin_ws/src
-git clone https://github.com/madratman/youbot_leapmotionteleop.git
-cd ~catkin_ws && catkin_make
-start a roscore (another shell) and leapd (another shell)
-You need to append the location of your LeapSDK (especially /lib and /lib/x64 or x86) to your PYTHONPATH, e.g., export PYTHONPATH=$PYTHONPATH:/path/to/SDK/lib:/path/to/SDK/x64. Remember that you will need to have your path set at least in the “sender” shell. If you want to set it every time, you can also alter the leapinterface.py file.
+1. If you don't already have a catkin workspace, please follow these instructions before starting with 2.: http://ros.org/wiki/catkin/Tutorials/create_a_workspace  
+2. cd ~/catkin_ws/src  
+3. git clone https://github.com/madratman/youbot_leapmotionteleop.git
+4. cd ~catkin_ws && catkin_make
+5. Start a roscore (another shell) and leapd (another shell)
+6. You need to append the location of your LeapSDK (especially /lib and /lib/x64 or x86) to your PYTHONPATH, e.g., export PYTHONPATH=$PYTHONPATH:/path/to/SDK/lib:/path/to/SDK/x64. Remember that you will need to have your path set at least in the “sender” shell. If you want to set it every time, you can also alter the leapinterface.py file.
 USAGE
 
 Before you start the application, you may want to make a configuration in the code where you can change publish rate (default 20Hz) or speed. The speed can be changed by adjusting the multipliers of geometry_msgs.linear.x/y and geometry_msgs.angular.z.
